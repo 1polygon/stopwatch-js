@@ -1,0 +1,8 @@
+{
+  "name": "js-stopwatch",
+  "version": "1.0.0",
+  "description": "Accurately measure elapsed time",
+  "type": "module",
+  "author": "https://github.com/1polygon",
+  "license": "ISC"
+}
