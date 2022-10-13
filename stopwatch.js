@@ -32,8 +32,8 @@ export class Stopwatch {
      * Resets elapsed time to zero and starts measuring elapsed time
      */
     restart() {
-        this.startTime = time();
-        this.offset = 0;
+        this.reset();
+        this.start();
     }
 
     /**
@@ -52,6 +52,14 @@ export class Stopwatch {
     setElapsed(milliseconds) {
         this.startTime = time();
         this.offset = milliseconds;
+    }
+
+    /**
+     * Sets the elapsed time in seconds
+     * @param {Number} milliseconds 
+     */
+    setElapsedSeconds(seconds) {
+        this.setElapsed(seconds * 1000.0);
     }
 
     /**
@@ -74,5 +82,12 @@ export class Stopwatch {
         } else {
             return this.offset;
         }
+    }
+
+    /**
+     * @returns {Number} elapsed time in seconds
+     */
+    elapsedSeconds() {
+        return this.elapsed() / 1000.0;
     }
 }
